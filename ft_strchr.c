@@ -6,12 +6,11 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 08:49:04 by sabras            #+#    #+#             */
-/*   Updated: 2024/04/19 09:12:27 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/07 18:59:26 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -26,6 +25,7 @@ char	*ft_strchr(const char *s, int c)
 }
 
 // #include <stdio.h>
+// #include <string.h>
 // int	main()
 // {
 // 	char	*str;
