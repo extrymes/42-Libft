@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 18:36:42 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/07 18:59:43 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/08 00:15:23 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s1)
 	char	*str;
 	size_t	i;
 
-	str = ft_calloc(ft_strlen(s1), sizeof(char));
+	str = malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (!str)
 	{
 		errno = ENOMEM;
