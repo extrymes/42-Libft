@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 00:09:52 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/08 01:24:00 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/11 23:58:08 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	ft_find_start(const char *str, const char *set)
 	size_t	i;
 
 	i = 0;
-	while (ft_in_set(str[i], set))
+	while (str[i] && ft_in_set(str[i], set))
 		i++;
 	return (i);
 }
@@ -41,7 +41,7 @@ static size_t	ft_find_end(const char *str, const char *set)
 	size_t	i;
 
 	i = ft_strlen(str) - 1;
-	while (ft_in_set(str[i], set))
+	while (i > 0 && ft_in_set(str[i], set))
 		i--;
 	return (i);
 }
@@ -55,6 +55,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 
 	start = ft_find_start(s1, set);
 	end = ft_find_end(s1, set);
+	if (start == ft_strlen(s1))
+		return (malloc(1));
 	str = malloc((end - start + 2) * sizeof(char));
 	if (!str)
 		return (NULL);
