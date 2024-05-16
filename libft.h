@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 18:16:46 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/12 18:33:28 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:22:34 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <errno.h>
 
 typedef struct	s_list
 {
