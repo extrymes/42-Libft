@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 19:11:00 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/09 23:41:58 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 19:48:30 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,20 @@ static size_t	ft_min_size(size_t a, size_t b)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
+	size_t			str_size;
 	unsigned int	i;
 
-	if (start >= ft_strlen(s))
-		return (malloc(1));
-	str = malloc(ft_min_size(len, ft_strlen(s) - start) * sizeof(char));
+	if (!s)
+		return (NULL);
+	str_size = 0;
+	if (start < ft_strlen(s))
+		str_size = ft_min_size(len, ft_strlen(s) - start);
+	str = malloc((str_size + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < len && s[start])
+	while (i < str_size)
 		str[i++] = s[start++];
+	str[i] = '\0';
 	return (str);
 }

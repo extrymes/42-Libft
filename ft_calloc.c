@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 18:25:02 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/07 18:33:25 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 08:40:33 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
+	size_t	total_size;
 	size_t	i;
 
-	ptr = malloc(count * size);
+	total_size = count * size;
+	if (count != 0 && total_size / count != size)
+		return (NULL);
+	ptr = malloc(total_size);
 	if (!ptr)
 		return (NULL);
 	i = 0;
-	while (i < count)
-	{
-		*((char *)ptr + i) = 0;
-		i++;
-	}
+	ft_memset(ptr, 0, total_size);
 	return (ptr);
 }

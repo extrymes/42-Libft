@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 13:50:34 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/09 13:52:53 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:59:17 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s || !fd)
+		return ;
 	write(fd, s, ft_strlen(s));
 }

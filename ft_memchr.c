@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:08:12 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/12 00:07:34 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:29:51 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	size_t	i;
+	unsigned char	*str;
+	size_t			i;
 
-	str = (char *)s;
+	str = (unsigned char *)s;
 	c = (unsigned char)c;
 	i = 0;
 	while (i < n)

@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:42 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/10 00:06:06 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:56:37 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_insert_tab(char **tab, const char *str, size_t len, size_t idx)
 	tab[idx][i] = '\0';
 }
 
-int	ft_insert_tabs(char	**tab, const char *str, char sep, size_t tabs_count)
+int	ft_insert_tabs(char	**tab, const char *str, char sep)
 {
 	size_t	idx;
 	size_t	i;
@@ -56,7 +56,7 @@ int	ft_insert_tabs(char	**tab, const char *str, char sep, size_t tabs_count)
 
 	idx = 0;
 	i = 0;
-	while (str[i] && idx < tabs_count)
+	while (str[i])
 	{
 		if (str[i] != sep)
 		{
@@ -67,7 +67,7 @@ int	ft_insert_tabs(char	**tab, const char *str, char sep, size_t tabs_count)
 			if (!tab[idx])
 				return (0);
 			ft_insert_tab(tab, str + i, j, idx++);
-			i += j;
+			i += j - 1;
 		}
 		i++;
 	}
@@ -80,11 +80,13 @@ char	**ft_split(const char *s, char c)
 	char	**tab;
 	size_t	tabs_count;
 
+	if (!s)
+		return (NULL);
 	tabs_count = ft_count_tabs(s, c);
 	tab = malloc((tabs_count + 1) * sizeof(char *));
 	if (!tab)
 		return (NULL);
-	if (!ft_insert_tabs(tab, s, c, tabs_count))
+	if (!ft_insert_tabs(tab, s, c))
 		return (NULL);
 	return (tab);
 }

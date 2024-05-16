@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:54:27 by sabras            #+#    #+#             */
-/*   Updated: 2024/04/17 16:58:26 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 23:24:54 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,25 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*d;
-	const char	*s;
-	size_t		i;
+	char		*p_dst;
+	const char	*p_src;
+	int			i;
 
-	d = (char *)dst;
-	s = (const char *)src;
-	if (s < d)
+	if (!dst && !src)
+		return (NULL);
+	p_dst = (char *)dst;
+	p_src = (const char *)src;
+	if (p_src >= p_dst)
 	{
-		i = len;
-		while (i > 0)
-		{
-			d[i - 1] = s[i - 1];
-			i--;
-		}
+		i = -1;
+		while (++i < (int)len)
+			p_dst[i] = p_src[i];
 	}
 	else
 	{
-		i = 0;
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
+		i = len + 1;
+		while (--i > 0)
+			p_dst[i - 1] = p_src[i - 1];
 	}
 	return (dst);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main () {
-// 	char	*str;
-// 	char	*str2;
-// 	char	*str3;
-
-// 	str = strdup("Hell");
-// 	str2 = strdup("Hell");
-// 	str3 = strdup("World");
-// 	puts(str);
-// 	puts(str2);
-// 	puts(str3);
-// 	memmove(str, str3, 2);
-// 	ft_memmove(str2, str3, 2);
-// 	puts(str);
-// 	puts(str2);
-// 	puts(str3);
-// 	return(0);
-// }

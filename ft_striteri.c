@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 22:43:20 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/08 22:46:56 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/15 18:48:43 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i])
 	{
