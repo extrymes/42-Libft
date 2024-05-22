@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:42 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/22 09:32:10 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/22 11:48:48 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	ft_insert_tabs(char	**tab, const char *str, char sep)
 	return (1);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	size_t	tabs_count;

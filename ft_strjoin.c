@@ -6,13 +6,13 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 20:06:46 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/15 18:54:20 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/22 11:49:59 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	i;

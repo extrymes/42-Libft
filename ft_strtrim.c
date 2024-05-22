@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 00:09:52 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/15 18:55:13 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/22 11:48:16 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_in_set(const char c, const char *set)
 	return (0);
 }
 
-char	*ft_strtrim(const char *s1, const char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
