@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:42 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/22 11:48:48 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/22 12:59:45 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	ft_free_tab(char **tab, size_t idx)
 	size_t	i;
 
 	i = 0;
-	while (i++ < idx)
-		free(tab[idx]);
+	while (i < idx)
+		free(tab[i++]);
 	free(tab);
 }
 
