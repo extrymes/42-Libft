@@ -6,7 +6,7 @@
 /*   By: sabras <sabras@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 01:24:42 by sabras            #+#    #+#             */
-/*   Updated: 2024/05/15 18:56:37 by sabras           ###   ########.fr       */
+/*   Updated: 2024/05/22 09:32:10 by sabras           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ static	size_t	ft_count_tabs(const char *str, char sep)
 		i++;
 	}
 	return (tabs_count);
+}
+
+void	ft_free_tab(char **tab, size_t idx)
+{
+	size_t	i;
+
+	i = 0;
+	while (i++ < idx)
+		free(tab[idx]);
+	free(tab);
 }
 
 void	ft_insert_tab(char **tab, const char *str, size_t len, size_t idx)
@@ -65,7 +75,7 @@ int	ft_insert_tabs(char	**tab, const char *str, char sep)
 				j++;
 			tab[idx] = malloc((j + 1) * sizeof(char));
 			if (!tab[idx])
-				return (0);
+				return (ft_free_tab(tab, idx), 0);
 			ft_insert_tab(tab, str + i, j, idx++);
 			i += j - 1;
 		}
